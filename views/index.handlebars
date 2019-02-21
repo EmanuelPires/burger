@@ -1,1 +1,69 @@
-<h1>Eat Da Burger</h1>
+<div class="container bg-info text-white">
+    <h1>Eat Da Burger</h1>
+
+    <img src="../assets/img/580b57fcd9996e24bc43c1a8.png" alt="">
+    <div class="row">
+        <div class="col-sm">
+            <div id="newBurger">
+                <ul>
+                    {{#each burgers}}
+                    {{#unless devoured}}
+                    <li>
+                        <p>{{this.burger_name}}</p>
+                    </li>
+                    {{/unless}}
+                    {{/each}}
+                </ul>
+            </div>
+        </div>
+        <div class="col-sm">
+            <div class="text-center" id="devourButton">
+
+                {{#each burgers}}
+                {{#unless devoured}}
+
+
+                <button class="btn btn-secondary">Devour It</button>
+                {{/unless}}
+                {{/each}}
+
+            </div>
+        </div>
+        <div class="col-sm">
+            <div class="text-center" id="devouredBurger">
+                <ul>
+                    {{#each burgers}}
+                    {{#if devoured}}
+                    <li>
+                        <p>{{this.burger_name}}</p>
+                    </li>
+                    {{/if}}
+                    {{/each}}
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm"></div>
+        <div class="col-sm">
+            <div class="text-center">
+                <form>
+                    <div class="form-group" id="newBurger">
+                        <label for="burgerName">Tell us what burger YOU want to devour!</label>
+                        <textarea class="form-control" id="burgerToEat" rows="3"></textarea>
+                    </div>
+
+                    <div class="text-center"><button id="submit" class="mx-auto" type="button">submit</button></div>
+
+                </form>
+            </div>
+        </div>
+        <div class="col-sm"></div>
+    </div>
+    <div class="row">
+        <div class="col-sm"></div>
+        <div class="col-sm"></div>
+        <div class="col-sm"></div>
+    </div>
+
+</div>
